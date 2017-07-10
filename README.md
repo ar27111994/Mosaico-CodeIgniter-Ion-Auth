@@ -36,7 +36,7 @@ if you don't have it, install grunt-cli globally
 ```
   npm install -g grunt-cli
 ```
-compile and run a local webserver (http://127.0.0.1:9006) with incremental build and livereload
+Run an incremental build and livereload (**Note:** It will run the *Node.js* Backend server, therefore terminate its execution after the build is complete (it will display `Running "watch" task` on the CLI after build is complete). 
 ```
   grunt
 ```
