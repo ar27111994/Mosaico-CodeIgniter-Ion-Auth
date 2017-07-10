@@ -6,9 +6,9 @@ Mosaico is a JavaScript library (or maybe a single page application) supporting 
 
 This Backend implementation of Mosaico comes with the latest version of Codeigniter and Codeigniter Ion Auth 2. Moreover, I've also integrated an [Email Queue System](https://github.com/izn/codeigniter-mailqueue/) for sending bulk Email. The library is just an extension to Codeigniter's built-in Email Class, therefore it can be omitted from the project, if desired, in which case `line number 423` and `send_pending_emails` method from the **Email_templates** Controller.
 
-*******************
-Server Requirements
-*******************
+*********************
+# Server Requirements
+*********************
 
 PHP version 5.6 or newer is recommended.
 
@@ -16,15 +16,17 @@ It should work on 5.3.7 as well, but we strongly advise you NOT to run
 such old versions of PHP, because of potential security and performance
 issues, as well as missing features.
 
-Install and Enable ```Imagick``` PHP Extension (to be used in Mosaico Image Placeholders), ```PHP Cli and exec()``` (to be used in [Email Queue System](https://github.com/izn/codeigniter-mailqueue/)).
+Install and Enable `Imagick` PHP Extension (to be used in Mosaico Image Placeholders), `PHP Cli and exec()` (to be used in [Email Queue System](https://github.com/izn/codeigniter-mailqueue/)).
 
-************
-Installation
-************
+**************
+# Installation
+**************
 
-Please make sure that your server fulfills the above mentioned Requirements, then see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-You need NodeJS v6.0 or higher + ImageMagick
+Please make sure that your server fulfills the above mentioned Requirements, then see the [installation section](https://codeigniter.com/user_guide/installation/index.html) of the CodeIgniter User Guide.
+
+Then import database from `mosaico_ci.sql` [file](https://github.com/ar27111994/Mosaico-CodeIgniter-Ion-Auth/blob/master/mosaico_ci.sql).
+
+Plus, You need NodeJS v6.0 or higher + ImageMagick
 
 this may raise warnings about Knockout, ignore them. It will probably fail on some colorpicker dependency, just run it again and will work:
 ```
@@ -48,33 +50,32 @@ grunt makeThumbs:main:yourtemplatename
 
 *NOTE* we have reports that default Ubuntu node package have issues with building Mosaico via Grunt. If you see a ```Fatal error: watch ENOSPC``` then have a look at https://github.com/voidlabs/mosaico/issues/82
 
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
 *********
-Resources
+# License
 *********
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community IRC <https://webchat.freenode.net/?channels=%23codeigniter>`_
+Please see the [license agreement](https://github.com/ar27111994/Mosaico-CodeIgniter-Ion-Auth/blob/master/LICENSE).
+
+***********
+# Resources
+***********
+
+- [Codeigniter User Guide](https://codeigniter.com/docs>)
+- [Codeigniter Language File Translations](<https://github.com/bcit-ci/codeigniter3-translations)
+- [Codeigniter Community Forums](http://forum.codeigniter.com/)
+- [Codeigniter Community Wiki](https://github.com/bcit-ci/CodeIgniter/wiki)
+- [Codeigniter Community IRC](https://webchat.freenode.net/?channels=%23codeigniter)
 - [Mosaico Basics](https://github.com/voidlabs/mosaico/wiki)
-- [Developer Notes](https://github.com/voidlabs/mosaico/wiki/Developers)
+- [Mosaico Developer Notes](https://github.com/voidlabs/mosaico/wiki/Developers)
 
 Report security issues to our `Admin <mailto:admin@ar27111994.com>`_, thank you.
 
-***************
-Acknowledgement
-***************
+*****************
+# Acknowledgement
+*****************
 
 The Mosaico CodeIgniter Ion Auth team would like to thank EllisLab, Voidlabs all the
-contributors to the CodeIgniter, Ion Auth, Mosaico projects and you, the Mosaico CodeIgniter Ion Auth user. Moreover, Special thanks o:
+contributors to the CodeIgniter, Ion Auth, Mosaico projects and you, the Mosaico CodeIgniter Ion Auth user. Moreover, Special thanks to:
 
 - [Thaynã Bruno Moretti](https://github.com/izn/codeigniter-mailqueue/)
 - [Access Interpreting, Inc.](https://github.com/ainterpreting/mosaico-php-backend)
