@@ -4,7 +4,7 @@ Mosaico is a JavaScript library (or maybe a single page application) supporting 
 
 ![Mosaico Screenshot](mosaico/res/img/screenshot.png)
 
-This Backend implementation of Mosaico comes with the latest version of Codeigniter and Codeigniter Ion Auth 2. Moreover, I've also integrated an [Email Queue System](https://github.com/izn/codeigniter-mailqueue/) for sending bulk Email. The library is just an extension to Codeigniter's built-in Email Class, therefore it can be omitted from the project, if desired, in which case `line number 423` and `send_pending_emails` method from the **Email_templates** Controller.
+This Backend implementation of Mosaico comes with the latest version of Codeigniter and Codeigniter Ion Auth 2. Moreover, I've also integrated an [Email Queue System](https://github.com/izn/codeigniter-mailqueue/) for sending bulk Email. The library is just an extension to Codeigniter's built-in Email Class, therefore it can be omitted from the project, if desired, in which case, you must remove `line number 423` and `send_pending_emails` method from the **Email_templates** Controller.
 
 *************
 **Live Demo**
