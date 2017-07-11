@@ -66,15 +66,15 @@ Please see the [license agreement](https://github.com/ar27111994/Mosaico-CodeIgn
 **Resources**
 *************
 
-- [Codeigniter User Guide](https://codeigniter.com/docs>)
-- [Codeigniter Language File Translations](<https://github.com/bcit-ci/codeigniter3-translations)
+- [Codeigniter User Guide](https://codeigniter.com/docs)
+- [Codeigniter Language File Translations](https://github.com/bcit-ci/codeigniter3-translations)
 - [Codeigniter Community Forums](http://forum.codeigniter.com/)
 - [Codeigniter Community Wiki](https://github.com/bcit-ci/CodeIgniter/wiki)
 - [Codeigniter Community IRC](https://webchat.freenode.net/?channels=%23codeigniter)
 - [Mosaico Basics](https://github.com/voidlabs/mosaico/wiki)
 - [Mosaico Developer Notes](https://github.com/voidlabs/mosaico/wiki/Developers)
 
-Report security issues to our `Admin <mailto:admin@ar27111994.com>`_, thank you.
+Report security issues to our [Admin](mailto:admin@ar27111994.com), thank you.
 
 *******************
 **Acknowledgement**
