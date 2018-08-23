@@ -275,105 +275,99 @@ class Email_templates extends CI_Controller {
      */
     public function ProcessImgRequest()
     {
-        if ($this->ion_auth->logged_in())
+        if ( $this->input->method(TRUE) == "GET" )
 		{
-        	if ( $this->input->method(TRUE) == "GET" )
-        	{
-        		$method = $this->input->get( "method" );
-        
-        		$params = explode( ",", $this->input->get( "params" ) );
-        
-        		$width = (int) $params[ 0 ];
-        		$height = (int) $params[ 1 ];
-        
-        		if ( $method == "placeholder" )
-        		{
-        			$image = new Imagick();
-        
-        			$image->newImage( $width, $height, "#707070" );
-        			$image->setImageFormat( "png" );
-        
-        			$x = 0;
-        			$y = 0;
-        			$size = 40;
-        
-        			$draw = new ImagickDraw();
-        
-        			while ( $y < $height )
-        			{
-        				$draw->setFillColor( "#808080" );
-        
-        				$points = [
-        					[ "x" => $x, "y" => $y ],
-        					[ "x" => $x + $size, "y" => $y ],
-        					[ "x" => $x + $size * 2, "y" => $y + $size ],
-        					[ "x" => $x + $size * 2, "y" => $y + $size * 2 ]
-        				];
-        
-        				$draw->polygon( $points );
-        
-        				$points = [
-        					[ "x" => $x, "y" => $y + $size ],
-        					[ "x" => $x + $size, "y" => $y + $size * 2 ],
-        					[ "x" => $x, "y" => $y + $size * 2 ]
-        				];
-        
-        				$draw->polygon( $points );
-        
-        				$x += $size * 2;
-        
-        				if ( $x > $width )
-        				{
-        					$x = 0;
-        					$y += $size * 2;
-        				}
-        			}
-        
-        			$draw->setFillColor( "#B0B0B0" );
-        			$draw->setFontSize( $width / 5 );
-        			$draw->setFontWeight( 800 );
-        			$draw->setGravity( Imagick::GRAVITY_CENTER );
-        			$draw->annotation( 0, 0, $width . " x " . $height );
-        
-        			$image->drawImage( $draw );
-        
-        			$this->output->set_header( "Content-type: image/png" );
-        
-        			echo $image;
-        		}
-        		else
-        		{
-        			$file_name = $this->input->get( "src" );
-        
-        			$path_parts = pathinfo( $file_name );
-        
-        			switch ( $path_parts[ "extension" ] )
-        			{
-        				case "png":
-        					$mime_type = "image/png";
-        					break;
-        
-        				case "gif":
-        					$mime_type = "image/gif";
-        					break;
-        
-        				default:
-        					$mime_type = "image/jpeg";
-        					break;
-        			}
-        
-        			$file_name = $path_parts[ "basename" ];
-        
-        			$image = $this->ResizeImage( $file_name, $method, $width, $height );
-        
-        			$this->output->set_header( "Content-type: " . $mime_type );
-        
-        			echo $image;
-        		}
-        	}
-		}
-    	else {
-			$this->output->set_status_header(403)->set_content_type('application/json')->set_output( json_encode( array( "msg" => "Please login to continue." ), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) );
+			$method = $this->input->get( "method" );
+	
+			$params = explode( ",", $this->input->get( "params" ) );
+	
+			$width = (int) $params[ 0 ];
+			$height = (int) $params[ 1 ];
+	
+			if ( $method == "placeholder" )
+			{
+				$image = new Imagick();
+	
+				$image->newImage( $width, $height, "#707070" );
+				$image->setImageFormat( "png" );
+	
+				$x = 0;
+				$y = 0;
+				$size = 40;
+	
+				$draw = new ImagickDraw();
+	
+				while ( $y < $height )
+				{
+					$draw->setFillColor( "#808080" );
+	
+					$points = [
+						[ "x" => $x, "y" => $y ],
+						[ "x" => $x + $size, "y" => $y ],
+						[ "x" => $x + $size * 2, "y" => $y + $size ],
+						[ "x" => $x + $size * 2, "y" => $y + $size * 2 ]
+					];
+	
+					$draw->polygon( $points );
+	
+					$points = [
+						[ "x" => $x, "y" => $y + $size ],
+						[ "x" => $x + $size, "y" => $y + $size * 2 ],
+						[ "x" => $x, "y" => $y + $size * 2 ]
+					];
+	
+					$draw->polygon( $points );
+	
+					$x += $size * 2;
+	
+					if ( $x > $width )
+					{
+						$x = 0;
+						$y += $size * 2;
+					}
+				}
+	
+				$draw->setFillColor( "#B0B0B0" );
+				$draw->setFontSize( $width / 5 );
+				$draw->setFontWeight( 800 );
+				$draw->setGravity( Imagick::GRAVITY_CENTER );
+				$draw->annotation( 0, 0, $width . " x " . $height );
+	
+				$image->drawImage( $draw );
+	
+				$this->output->set_header( "Content-type: image/png" );
+	
+				echo $image;
+			}
+			else
+			{
+				$file_name = $this->input->get( "src" );
+	
+				$path_parts = pathinfo( $file_name );
+	
+				switch ( $path_parts[ "extension" ] )
+				{
+					case "png":
+						$mime_type = "image/png";
+						break;
+	
+					case "gif":
+						$mime_type = "image/gif";
+						break;
+	
+					default:
+						$mime_type = "image/jpeg";
+						break;
+				}
+	
+				$file_name = $path_parts[ "basename" ];
+	
+				$image = $this->ResizeImage( $file_name, $method, $width, $height );
+	
+				$this->output->set_header( "Content-type: " . $mime_type );
+	
+				echo $image;
+			}
 		}
     }
 
