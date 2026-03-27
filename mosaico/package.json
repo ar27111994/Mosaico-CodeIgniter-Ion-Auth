@@ -72,7 +72,7 @@
     "lodash": "4.17.23",
     "mockery": "2.1.0",
     "morgan": "1.9.1",
-    "nodemailer": "7.0.7",
+    "nodemailer": "8.0.4",
     "phantomjs-prebuilt": "2.1.13",
     "uglifyify": "3.0.3",
     "watchify": "3.7.0"
