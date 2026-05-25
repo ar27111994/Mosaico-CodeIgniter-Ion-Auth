@@ -69,10 +69,10 @@
     "jquery-file-upload-middleware": "0.1.8",
     "jshint-stylish": "2.2.1",
     "load-grunt-tasks": "3.5.2",
-    "lodash": "4.17.23",
+    "lodash": "4.18.1",
     "mockery": "2.1.0",
     "morgan": "1.9.1",
-    "nodemailer": "8.0.4",
+    "nodemailer": "8.0.5",
     "phantomjs-prebuilt": "2.1.13",
     "uglifyify": "3.0.3",
     "watchify": "3.7.0"
